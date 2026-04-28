@@ -9,18 +9,18 @@
 - **仿真验证**：基于 SUMO + TraCI 完成微观交通仿真，对比传统固定配时与 MA2C 优化配时的效果差异
 - **工程配套**：包含完整 SUMO 路网、车流、配置文件及运行程序，可直接运行仿真
 
-## 项目结构（完整可上传 GitHub，对应论文附录 A/B）
+## 项目结构
 
 ```
-traffic-prediction-signal-control/
+sumoproject/
 ├── data/                          # 基础数据文件夹
 │   └── traffic_data.csv           # 交通流训练/测试数据（用于Graph WaveNet训练）
-├── models/                        # 核心算法代码（论文附录A）
+├── models/                        # 核心算法代码
 │   ├── data_process.py            # 数据预处理、时空序列构建
 │   ├── graph_wavenet.py           # Graph WaveNet多尺度预测模型
 │   ├── ma2c_agent.py              # MA2C多智能体信号控制算法
 │   └── sumo_interface.py          # SUMO仿真交互接口（状态采集/信号控制）
-├── sumo/                          # SUMO工程文件（论文附录B）
+├── sumo/                          # SUMO工程文件
 │   ├── road.net.xml               # 成都天府广场周边路网文件（复刻真实拓扑）
 │   ├── traffic.rou.xml            # 高峰时段仿真车流文件（贴合本地出行特征）
 │   ├── run.sumocfg                # 仿真总配置文件（参数统一配置）
